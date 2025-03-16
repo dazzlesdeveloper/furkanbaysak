@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şarküteri</title>
+     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        /* Genel Stil Ayarları */
+        body {
+             font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p.aciklama {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        main {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 800px; /* Genişlik ayarlandı */
+            text-align: center; /* İçeriği ortala */
+            flex: 1; /* Main içeriği esnek olacak ve kalan alana yayılacak */
+             display: flex;
+            flex-direction: column;
+            justify-content: center; /* Dikeyde ortala */
+            align-items: center; /* Yatayda ortala */
+        }
+
+        .yakinda-eklenecek {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+             margin-bottom: 20px;
+        }
+
+        .sabir-metin {
+             font-size: 1.2em;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Ekran Boyutu Ayarları */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p.aciklama {
+                font-size: 1em;
+            }
+
+             main {
+                padding: 20px;
+            }
+        }
+
+       /* Genel Stil Ayarları */
+         .back-button {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 1.5em;
+            padding: 7px 7px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
+         }
+         .back-button:hover {
+            background-color: #e0e0e0; }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.location.href='../home.html'">←</button>
+        <h1>Şarküteri</h1>
+    </header>
+    <main>
+        <h2 class="yakinda-eklenecek">Çok Yakında Eklenecek!</h2>
+        <p class="sabir-metin">Zengin şarküteri seçeneklerimiz için lütfen takipte kalın. Lezzetli ürünlerimizle buluşmanız için sabırsızlanıyoruz!</p>
+    </main>
+</body>
+</html>

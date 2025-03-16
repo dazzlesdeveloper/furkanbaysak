@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <title>SİVAS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+            width: 80%;
+            margin: 40px auto;
+        }
+        .sube-listesi {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+        .sube {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .sube:hover {
+            transform: scale(1.05);
+        }
+        .sube h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .sube p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .sube .address {
+            font-size: 14px;
+            color: #666;
+        }
+        .sube .phone-number {
+            color: #333;
+        }
+        .sube .maps-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        @media (max-width: 767px) {
+            h2 {
+                text-align: center;
+                padding-top: 20px;
+                margin-top: 0;
+                width: 100%;
+            }
+            .sube h3, .sube .address, .sube .phone-number {
+                text-align: center;
+            }
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ffffff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" onclick="window.location.href='../home.html'">🔙</button>
+
+    <header>
+        <h1>SİVAS</h1>
+    </header>
+
+    <main>
+        <h2>MERKEZ</h2>
+        <div class="sube-listesi">
+            <div class="sube">
+                <h3>Sivas-1</h3>
+                <p class="address"><strong>Adres:</strong> Bağdat cd. MERKEZ</p>
+                <p class="phone-number"><strong>Telefon:</strong>0501 051 94 94</p>
+                 <img src="map-icon.png" alt="Harita" class="maps-icon" onclick="window.open('https://www.google.com/maps?q=Furkan+Baysak+Pastaneleri+Bağdat+cd.+Merkez+Sivas', '_blank')">
+            </div>
+            <div class="sube">
+                <h3>Sivas-2</h3>
+                <p class="address"><strong>Adres:</strong> Mehmet Paşa mh. Saraybosna cd. MERKEZ</p>
+                <p class="phone-number"><strong>Telefon:</strong>0501 101 94 94</p>
+                <img src="map-icon.png" alt="Harita" class="maps-icon" onclick="window.open('https://www.google.com/maps?q=Furkan+Baysak+Pastaneleri+Mehmet+Paşa+mh.+Saraybosna+cd.+Merkez+Sivas', '_blank')">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
