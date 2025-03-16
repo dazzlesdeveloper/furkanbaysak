@@ -602,9 +602,6 @@
 
         cloneSliderItems();
 
-        // Güncellenmiş kutular dizisi
-        const kutularGuncel = document.querySelectorAll('.kutu');
-
         function startSlider() {
             sliderInterval = setInterval(() => {
                 moveSlide(1);
@@ -642,6 +639,38 @@
         sliderContainer.addEventListener('mouseleave', startSlider);
     </script>
     <script>
+         // function __init() {
+            let bakimda = false;
+            function checkBakim() {
+        database.ref('bakim/durum').once('value').then(function (snapshot) {
+            if (snapshot.val() === 1 && !bakimda) {
+                bakimda = true;
+                window.location.replace("bakim.html");
+                window.onbeforeunload = function () {
+                  return 'Sayfadan ayrılmak istediğinize emin misiniz?';
+                };
+            } else if (snapshot.val() !== 1) {
+                bakimda = false;
+                window.onbeforeunload = null;
+            }
+        });
+        }
+
+        checkBakim();
+
+        database.ref('bakim/durum').on('value', function (snapshot) {
+            if (snapshot.val() === 1 && !bakimda) {
+                bakimda = true;
+                window.location.replace("bakim.html");
+                 window.onbeforeunload = function () {
+                  return 'Sayfadan ayrılmak istediğinize emin misiniz?';
+                };
+            } else if (snapshot.val() !== 1) {
+                bakimda = false;
+                window.onbeforeunload = null;
+            }
+        });
+      //  }
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
