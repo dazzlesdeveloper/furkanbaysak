@@ -496,14 +496,14 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
         const firebaseConfig = {
-            apiKey: "apiKey",
-            authDomain: "authDomain",
-            databaseURL: "databaseURL",
-            projectId: "projectId",
-            storageBucket: "storageBucket",
-            messagingSenderId: "messagingSenderId",
-            appId: "appId",
-            measurementId: "measurementId"
+            apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
+            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
+            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
+            projectId: "furkan-baysak-b74ef",
+            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
+            messagingSenderId: "332668884342",
+            appId: "1:332668884342:web:975a46d869cf37bbc85657",
+            measurementId: "G-1TQKFHW50T"
         };
 
         firebase.initializeApp(firebaseConfig);
@@ -643,21 +643,20 @@
 
     </script>
     <script>
-       //  function __init() {
-            let bakimda = false;
-             function checkBakim() {
-             database.ref('bakim/durum').once('value').then(function (snapshot) {
-            if (snapshot.val() === 1 && !bakimda) {
-                bakimda = true;
-                window.location.replace("bakim.html");
-                 window.onbeforeunload = function () {
-                  return 'Sayfadan ayrılmak istediğinize emin misiniz?';
-                };
-            } else if (snapshot.val() !== 1) {
-                bakimda = false;
-                window.onbeforeunload = null;
-            }
-        });
+         let bakimda = false;
+        function checkBakim() {
+            database.ref('bakim/durum').once('value').then(function (snapshot) {
+                if (snapshot.val() === 1 && !bakimda) {
+                    bakimda = true;
+                    window.location.replace("bakim.html");
+                    window.onbeforeunload = function () {
+                        return 'Sayfadan ayrılmak istediğinize emin misiniz?';
+                    };
+                } else if (snapshot.val() !== 1) {
+                    bakimda = false;
+                    window.onbeforeunload = null;
+                }
+            });
         }
 
         checkBakim();
@@ -668,15 +667,15 @@
             if (snapshot.val() === 1 && !bakimda) {
                 bakimda = true;
                 window.location.replace("bakim.html");
-                 window.onbeforeunload = function () {
-                  return 'Sayfadan ayrılmak istediğinize emin misiniz?';
+                window.onbeforeunload = function () {
+                    return 'Sayfadan ayrılmak istediğinize emin misiniz?';
                 };
             } else if (snapshot.val() !== 1) {
                 bakimda = false;
                 window.onbeforeunload = null;
             }
         });
-      //  }
+
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
