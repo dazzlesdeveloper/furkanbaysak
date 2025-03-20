@@ -643,14 +643,14 @@
 
     </script>
     <script>
-         // function __init() {
+       //  function __init() {
             let bakimda = false;
-            function checkBakim() {
-        database.ref('bakim/durum').once('value').then(function (snapshot) {
+             function checkBakim() {
+             database.ref('bakim/durum').once('value').then(function (snapshot) {
             if (snapshot.val() === 1 && !bakimda) {
                 bakimda = true;
                 window.location.replace("bakim.html");
-                window.onbeforeunload = function () {
+                 window.onbeforeunload = function () {
                   return 'Sayfadan ayrılmak istediğinize emin misiniz?';
                 };
             } else if (snapshot.val() !== 1) {
@@ -661,6 +661,8 @@
         }
 
         checkBakim();
+        setInterval(checkBakim, 1000); // 1 saniyede bir kontrol et
+
 
         database.ref('bakim/durum').on('value', function (snapshot) {
             if (snapshot.val() === 1 && !bakimda) {
