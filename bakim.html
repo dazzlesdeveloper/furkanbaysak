@@ -33,8 +33,40 @@
             margin-bottom: 20px;
         }
     </style>
+       <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script>
+        // Firebase yapılandırmanızı buraya ekleyin
+        const firebaseConfig = {
+             apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
+            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
+            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
+            projectId: "furkan-baysak-b74ef",
+            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
+            messagingSenderId: "332668884342",
+            appId: "1:332668884342:web:975a46d869cf37bbc85657",
+            measurementId: "G-1TQKFHW50T"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Bakım durumunu kontrol et ve gerekirse ana sayfaya yönlendir
+        function checkBakimDurumu() {
+            database.ref('bakim/durum').once('value').then(function(snapshot) {
+                const bakimda = snapshot.val();
+                if (bakimda === 0) {
+                    window.location.href = "home.html"; // Ana sayfanın adresi
+                }
+            });
+        }
+
+        // Sayfa yüklendiğinde ve her saniyede bir bakım durumunu kontrol et
+        checkBakimDurumu();
+         setInterval(checkBakimDurumu, 1000);
+    </script>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <div class="container">
         <img src="img/logo.png" alt="Logo" class="logo">
         <h1>Sitemiz Şu Anda Bakımdadır</h1>
