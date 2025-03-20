@@ -496,14 +496,14 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
         const firebaseConfig = {
-            apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
-            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
-            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
-            projectId: "furkan-baysak-b74ef",
-            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
-            messagingSenderId: "332668884342",
-            appId: "1:332668884342:web:975a46d869cf37bbc85657",
-            measurementId: "G-1TQKFHW50T"
+            apiKey: "apiKey",
+            authDomain: "authDomain",
+            databaseURL: "databaseURL",
+            projectId: "projectId",
+            storageBucket: "storageBucket",
+            messagingSenderId: "messagingSenderId",
+            appId: "appId",
+            measurementId: "measurementId"
         };
 
         firebase.initializeApp(firebaseConfig);
@@ -578,7 +578,7 @@
             menu.classList.remove('open');
         }
 
-        // Slider Kontrolü
+          // Slider Kontrolü
         const slider = document.querySelector('.slider');
         const kutular = document.querySelectorAll('.kutu');
         const sliderContainer = document.querySelector('.slider-container');
@@ -601,6 +601,9 @@
         }
 
         cloneSliderItems();
+
+       // Klonlama işleminden sonra kutular dizisini güncelle
+        let kutularGuncel = document.querySelectorAll('.kutu');
 
         function startSlider() {
             sliderInterval = setInterval(() => {
@@ -637,6 +640,7 @@
         // Fare üzerine geldiğinde otomatik kaydırmayı durdur, ayrıldığında devam ettir
         sliderContainer.addEventListener('mouseenter', stopSlider);
         sliderContainer.addEventListener('mouseleave', startSlider);
+
     </script>
     <script>
          // function __init() {
